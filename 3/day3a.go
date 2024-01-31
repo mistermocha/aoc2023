@@ -9,19 +9,6 @@ import (
 	"strings"
 )
 
-
-
-func getRatio(schematic [][]string, row int, col int) int {
-	block = getBlock(schematic, row, col)
-	for i, row := range block {
-		for j, col := range row {
-			if num, err := strconv.Atoi(col); err == nil {
-
-			}
-		}
-	}
-}
-
 func getBlock(schematic [][]string, x int, y int, l int) [][]string {
 	var res [][]string
 
@@ -30,7 +17,6 @@ func getBlock(schematic [][]string, x int, y int, l int) [][]string {
 	for _, row := range schematic[int(minx):int(maxx)] {
 		miny := math.Max(float64(y-1), 0)
 		maxy := math.Min(float64(y+l+1), float64(len(row)))
-		//fmt.Println(row)
 		res = append(res, row[int(miny):int(maxy)])
 	}
 	return res
